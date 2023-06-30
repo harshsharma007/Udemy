@@ -1,43 +1,52 @@
-<table style="width: 1000px; border-spacing: 10px;">
+<table style="width: 1280px; border-spacing: 10px;">
     <thead>
         <tr>
-            <th style="text-align: left; font-size: xx-large; width: 200px;">Subnets</th>
-            <th style="text-align: left; font-size: xx-large; width: 200px;">Answer Area</th>
-            <th style="text-align: left; font-size: xx-large; width: 20px;"></th>
+            <th style="text-align: center; font-size: xx-large; width: 300px;">Values</th>
+            <th style="text-align: center; font-size: xx-large; width: 680px;">Answer Area</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td style="width: 400px; height: 40px; border: 1px solid skyblue; text-align: center;">
-                <span style="line-height: 40px; font-size: x-large;">AzureFirewallSubnet</span>
+            <td style="width: 300px; height: 40px; border: 1px solid skyblue; text-align: left;">
+                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;">Get-AzPolicyAssignment</span>
             </td>
-            <td style="width: 200px; height: 40px; text-align: center;">
-                <span style="line-height: 40px; font-size: x-large;">RT1:</span>
-            </td>
-            <td style="width: 400px; height: 40px; text-align: center; border: 1px solid skyblue;">
-                <span style="line-height: 40px; font-size: x-large;">GatewaySubnet</span>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 400px; height: 40px; border: 1px solid skyblue; text-align: center;">
-                <span style="line-height: 40px; font-size: x-large;">GatewaySubnet</span>
-            </td>
-            <td style="width: 200px; height: 40px; text-align: center;">
-                <span style="line-height: 40px; font-size: x-large;">RT2:</span>
-            </td>
-            <td style="width: 400px; height: 40px; border: 1px solid skyblue; text-align: center;">
-                <span style="line-height: 40px; font-size: x-large;">SpokeVNetSubnet0</span>
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 400px; height: 40px; border: 1px solid skyblue; text-align: center;">
-                <span style="line-height: 40px; font-size: x-large;">SpokeVNetSubnet0</span>
-            </td>
-            <td style="width: 200px; height: 40px; text-align: left;">
-                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;"></span>
-            </td>
-            <td style="width: 400px; height: 40px; text-align: center;">
+            <td style="width: 680px; height: 40px; text-align: right;">
                 <span style="line-height: 40px; font-size: x-large;"></span>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 300px; height: 40px; border: 1px solid skyblue; text-align: left;">
+                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;">Get-AzPolicyDefinition</span>
+            </td>
+            <td style="width: 680px; height: 40px; text-align: left;">
+                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;">$rg = Get-AzResourceGroup -Name 'RG1'</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 300px; height: 40px; border: 1px solid skyblue; text-align: left;">
+                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;">Get-AzPolicySetDefinition</span>
+            </td>
+            <td style="width: 680px; height: 40px; text-align: left;">
+                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;">$Policy = </span>
+                <input type="text" style="width: 300px; height: 40px; border: 1px solid skyblue;" />
+                <span style="line-height: 40px; font-size: x-large; margin-left: 3px;"> -Name 'Policy1'</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 300px; height: 40px; border: 1px solid skyblue; text-align: left;">
+                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;">New-AzPolicyAssignment</span>
+            </td>
+            <td style="width: 680px; height: 40px; text-align: left;">
+                <input type="text" style="width: 300px; height: 40px; border: 1px solid skyblue; margin-left: 10px;" />
+                <span style="line-height: 40px; font-size: x-large;">-Name 'AuditStorageAccounts' -PolicyDefinition</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 300px; height: 40px; border: 1px solid skyblue; text-align: left;">
+                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;">New-AzPolicyDefinition</span>
+            </td>
+            <td style="width: 680px; height: 40px; text-align: left;">
+                <span style="line-height: 40px; font-size: x-large; margin-left: 10px;">$Policy -Scope $rg.ResourceID</span>
             </td>
         </tr>
     </tbody>
